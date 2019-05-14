@@ -10,7 +10,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 	<title>Lista</title>
 </head>
-<body background="images/lienzo.jpg">
+<body background="images/fondo.jpg">
 	<div>
 		<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
 

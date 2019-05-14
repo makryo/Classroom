@@ -6,7 +6,7 @@
   		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
   		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 	</head>
-	<body background="images/lienzo.jpg">
+	<body background="images/fondo.jpg">
 
 	<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
 
@@ -29,7 +29,7 @@
 </nav>
 
 		<div align="center">
-			<form face="Arial">
+			<form face="Arial" method="post">
 				<h1>Formulario de ingreso</h1>
 				<br>
 				<br>
@@ -51,6 +51,25 @@
 				<br>
 				<input type="submit" value="enviar">
 				<br>
+				<?php
+				$servername = "localhost";
+				$username = "debian-sys-maint";
+				$password = "ws1SC0JreanoNAJ8";
+				$dbname = "ClassRoom";
+
+				$name = $_POST["producto"];
+				$pro = $_POST["precio"];
+				$stad = $_POST["estado"];
+
+				try
+				{
+					$conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+					$conn->setAttribute(PDO::ATTR_ERRMODE, PDO:: ERRMODE_EXCEPTION);
+					$sql = "insert into Product values(null, '$name','$pro','stad')";
+					
+				}
+
+				?>
 			</form>
 		</div>
 	</body>

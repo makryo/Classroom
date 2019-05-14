@@ -10,26 +10,28 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 	<title>Lista</title>
 </head>
-<body background="images/marmol.jpg">
-    <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-  
-  <a class="navbar-brand" href="#">
-    <img src="images/descarga.jpg" alt="logo" style="width:40px;">
-  </a>
-  
-  <!-- Links -->
-  <ul class="navbar-nav">
-    <li class="nav-item">
-      <a class="nav-link" href="index.php">Inicio</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="actualizar.php">Actualizar</a>
-    </li>
-    <li class="nav-item">
-      <a class="nav-link" href="lista.php">Lista</a>
-    </li>
-  </ul>
-</nav>
+<body background="images/lienzo.jpg">
+	<div>
+		<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+
+  			<a class="navbar-brand" href="#">
+    				<img src="images/descarga.jpg" alt="logo" style="width:40px;">
+  			</a>
+
+
+		<ul class="navbar-nav">
+			<li class="nav-item">
+      				<a class="nav-link" href="index.php">Nuevo</a>
+    			</li>
+    			<li class="nav-item">
+      				<a class="nav-link" href="actualizar.php">Actualizar</a>
+    			</li>
+    			<li class="nav-item">
+      				<a class="nav-link" href="lista.php">Lista</a>
+    			</li>
+  		</ul>
+	</nav>
+</div>
 <div align="center">
 
         <section class="col-md-10" style="align:center;">
@@ -52,8 +54,8 @@
                         <td>precio</td>
                         <td>estado</td>
                         <td>
-                            <a class="btn btn-light" href="SerId?id=${li.id}">Editar</a>
-                            <a class="btn btn-light" href="SerDelete?id=${li.id}">Borrar</a>
+                            <a class="btn btn-light" href="actualizar.php">Editar</a>
+                            <a class="btn btn-light" href="#">Borrar</a>
                         </td>
                     </tr>
                 </c:forEach>

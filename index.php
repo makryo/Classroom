@@ -6,14 +6,14 @@
   		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
   		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
 	</head>
-	<body background="images/marmol.jpg">
+	<body background="images/lienzo.jpg">
 
 	<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
-  
+
   <a class="navbar-brand" href="#">
     <img src="images/descarga.jpg" alt="logo" style="width:40px;">
   </a>
-  
+
   <!-- Links -->
   <ul class="navbar-nav">
     <li class="nav-item">
@@ -52,14 +52,6 @@
 				<input type="submit" value="enviar">
 				<br>
 			</form>
-			<button>
-				<a href="actualizar.html">Actualizar Datos</a>
-			</button>
-			<br>
-			<br>
-			<button>
-				<a href="lista.html">Listar datos</a>
-			</button>
 		</div>
 	</body>
 </html>

@@ -42,7 +42,7 @@
                                 </select>
                                 <br>
                                 <br>
-                                <input type="submit" value="enviar">
+                                <input type="submit" value="enviar" class="btn btn-outline-secondary">
                                 <br>
 
 			</form>

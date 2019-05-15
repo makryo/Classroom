@@ -35,21 +35,21 @@
 				<br>
 				<label>nombre del producto</label>
 				<br>
-				<input type="text" name="product" id="producto" pattern="^[a-zA-Z]+$" title="solo puede contener letras" maxlength="12">
+				<input type="text" name="producto" pattern="^[a-zA-Z]+$" title="solo puede contener letras" maxlength="12">
 				<br>
 				<label>precio</label>
 				<br>
-				<input type="text" name="price" id="precio" pattern="^[0-9.]+$" title="solo puede ingresar numeros" maxlength="8">
+				<input type="text" name="precio" pattern="^[0-9.]+$" title="solo puede ingresar numeros" maxlength="8">
 				<br>
 				<label>Estado</label>
 				<br>
-				<select id="estado" pattern="[Activo|Inactivo]" title="solo puede seleccionar las opciones disponibles">
+				<select name="estado" pattern="[Activo|Inactivo]" title="solo puede seleccionar las opciones disponibles">
 					<option value="Activo">Activo</option>
 					<option value="Inactivo">Inactivo</option>
 				</select>
 				<br>
 				<br>
-				<input type="submit" value="enviar">
+				<input type="submit" value="enviar" class="btn btn-outline-secondary">
 				<br>
 				<?php
 				$servername = "localhost";
@@ -64,13 +64,23 @@
 				try
 				{
 					$conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
-					$conn->setAttribute(PDO::ATTR_ERRMODE, PDO:: ERRMODE_EXCEPTION);
-					$sql = "insert into Product values(null, '$name','$pro','stad')";
-					
+					$conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+					$sql = "insert into producto values (null, '$name', '$pro', '$stad');";
+					$conn->exec($sql);
+					echo "datos ingresados exitosamente";
 				}
+				catch(PDOException $e)
+				{
+				echo $sql . "<br>" . $e->getMessage();
+				}
+				$conn = null;
 
 				?>
-			</form>
+				</form>
 		</div>
+
+
+
+
 	</body>
 </html>

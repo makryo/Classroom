@@ -45,20 +45,59 @@
                     <th>estado</th>
                     <th>Opciones</th>
                 </tr>
+                
+                <?php
 
-                <c:forEach items="${lista}" var="li">
+                $servername = "localhost";
+                $username = "debian-sys-maint";
+                $password = "ws1SC0JreanoNAJ8";
+                $dbname = "ClassRoom";
 
-                    <tr>
-                        <td>id</td>
-                        <td>nombre</td>
-                        <td>precio</td>
-                        <td>estado</td>
-                        <td>
-                            <a class="btn btn-light" href="actualizar.php">Editar</a>
-                            <a class="btn btn-light" href="#">Borrar</a>
+                try
+                {
+                $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+                $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+
+                $sql = "select * from producto";
+
+                if($conn)
+                {
+                    $result = $conn->query($sql);
+                    foreach ($result as $value) {
+                        echo 
+                        "<tr><td>" . $value["id"] . "</td>" .
+                        "<td>" . $value["product_name"] . "</td>" . 
+                        "<td>" . $value["price"] . "</td>"
+                        "<td>" . $value["is_active"] . "</td>";
+                        
+                        echo 
+                        "<td><a href='actualizar.php?id=" . 
+                        $value["id"] . 
+                        "&name=" . $value["product_name"] . 
+                        "&price=" . $value["price"] . 
+                        "&active=" . $value["is_active"] . 
+                        "'>Editar</a></td>" . 
+                        "<td><a href='delete.php?id=". 
+                        $value["id"] . "'>Eliminar</a>
                         </td>
-                    </tr>
-                </c:forEach>
+                        </tr>";
+                    }
+                }
+
+                else
+                {
+                    echo "sin datos";
+                }
+
+                }
+
+                catch(PDOException $e)
+                {
+                    echo $sql . "<br>" . $e->getMessage();
+                }
+                $conn = null;
+                ?>
+              
             </table>
             <footer>&copy; Copyright 2019 SoftDragon</footer>
         </section>

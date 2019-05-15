@@ -44,6 +44,7 @@
                     <th>Precio</th>
                     <th>estado</th>
                     <th>Opciones</th>
+                    <th>Opciones</th>
                 </tr>
                 
                 <?php
@@ -67,7 +68,7 @@
                         echo 
                         "<tr><td>" . $value["id"] . "</td>" .
                         "<td>" . $value["product_name"] . "</td>" . 
-                        "<td>" . $value["price"] . "</td>"
+                        "<td>" . $value["price"] . "</td>" .
                         "<td>" . $value["is_active"] . "</td>";
                         
                         echo 

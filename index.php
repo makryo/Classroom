@@ -35,7 +35,18 @@
 				<br>
 				<label>nombre del producto</label>
 				<br>
-				<input type="text" name="producto" pattern="^[a-zA-Z]+$" title="solo puede contener letras" maxlength="12">
+				<input type="text" name="producto" pattern="^[a-zA-Z]+$" title="solo puede contener letras" maxlength="12" id="vjs">
+				<script type="text/javascript">
+					function validar() {
+						valor = document.getElementById("vjs").value;
+
+						if(!/^([a-zA-Z])*$/.test(valor))
+						{
+							alert('solo puede contener letras');
+						
+						}
+					}
+				</script>
 				<br>
 				<label>precio</label>
 				<br>
@@ -49,7 +60,9 @@
 				</select>
 				<br>
 				<br>
-				<input type="submit" value="enviar" class="btn btn-outline-secondary">
+				<input type="submit" value="enviar" class="btn btn-outline-secondary" onclick="validar()">
+				<br>
+				<br>
 				<br>
 				<?php
 				$servername = "localhost";

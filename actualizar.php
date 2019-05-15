@@ -29,8 +29,12 @@
 			<form face="Arial">
 				<h1>Actualizar Datos</h1>
 				<br>
-				<br>
-				<label>precio</label>
+				                <br>
+                                <label>nombre del producto</label>
+                                <br>
+                                <input type="text" name="producto" pattern="^[a-zA-Z]+$" title="solo puede contener letras" maxlength="12">
+                                <br>
+				                        <label>precio</label>
                                 <br>
                                 <input type="text" name="price" id="precio" pattern="^[0-9.]+$" title="solo puede ingresar numeros">
                                 <br>
@@ -43,6 +47,37 @@
                                 <br>
                                 <br>
                                 <input type="submit" value="enviar" class="btn btn-outline-secondary">
+                                 
+                                <?php
+                                  $servername = "localhost";
+                                  $username = "debian-sys-maint";
+                                  $password = "ws1SC0JreanoNAJ8";
+                                  $dbname = "ClassRoom";
+
+                                  $name = $_POST["producto"];
+                                  $pro = $_POST["precio"];
+                                  $stad = $_POST["estado"];
+
+                                  $ides = $_GET["id"];
+                                  $pn = $_GET["product_name"];
+                                  $press = $_GET["price"];
+                                  $act = $_GET["is_active"];
+
+                                  try {
+                                    
+                                    $conn = new PDO("mysql:host=$servername;dbname=$dbname", $username, $password);
+                                    $conn->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+                                    $sql "update producto set product_name='$name', price='$pro', is_active='$stad' where id='$ides';";
+
+                                    $conn->exec($sql);
+                                    echo "datos actualizados";
+                                  } 
+                                  catch (Exception $e) {
+                                    
+                                    echo $sql . "<br>" . $e->getMessage();
+                                  }
+                                  $conn = null;
+                                ?>
                                 <br>
 
 			</form>
